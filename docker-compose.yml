@@ -7,7 +7,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.1.1
     restart: always
-    user: "0:1258"
+    user: "1000:1258"
     environment:
       - cluster.name=skope
       - bootstrap.memory_lock=true
@@ -18,28 +18,53 @@ services:
         soft: -1
         hard: -1
     volumes:
-      - /mnt/skope:/projects/skope
+      - /projects/skope:/projects/skope
   
   # geoserver to render tiles
   geoserver:
     build: geoserver
     restart: always
-    user: "0:1258"
+    user: "1000:1258"
     environment:
       JAVA_OPTS: "-Xmx1536M -XX:MaxPermSize=756M -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true"
       GEOSERVER_DATA_DIR: "/projects/skope/staging/geoserver"
     volumes:
-      - /mnt/skope:/projects/skope
+      - /projects/skope:/projects/skope
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    user: "0:1258"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo/data:/data
+
+  webapp:
+    image: openskope/web-app:0.0.11
+    volumes:
+      - ./webapp/app-settings.json:/usr/share/skope-web-app/app-settings.json
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/skope-webapp"
+      ROOT_URL: "http://staging.openskope.org/app"
+    ports:
+      - "3000:3000"
+    depends_on:
+      - elasticsearch
+      - mongo
   
   web:
     build: nginx
     restart: always
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - "80:80"
     depends_on:
+      - webapp
       - elasticsearch
       - geoserver
-  
+
 networks:
   default:
     driver: bridge

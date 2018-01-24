@@ -1,0 +1,10 @@
+{
+    "public": {
+        "elasticEndpoint": "http://staging.openskope.org/es"
+    },
+
+    "server": {
+        "elasticEndpoint": "http://staging.openskope.org/es"
+    }
+        
+}
