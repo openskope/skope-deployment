@@ -34,11 +34,12 @@ services:
   mongo:
     image: mongo:latest
     restart: always
-    user: "0:1258"
+    user: "1000:1258"
+    command: "mongod --dbpath /projects/skope/staging/mongo"
     ports:
       - "27017:27017"
     volumes:
-      - ./mongo/data:/data
+      - /projects/skope:/projects/skope
 
   webapp:
     image: openskope/web-app:0.0.11
