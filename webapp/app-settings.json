@@ -4,7 +4,6 @@
     },
 
     "server": {
-        "elasticEndpoint": "http://staging.openskope.org/es"
+        "elasticEndpoint": "http://elasticsearch:9200"
     }
-        
 }
