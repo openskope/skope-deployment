@@ -31,6 +31,17 @@ services:
     volumes:
       - /projects/skope:/projects/skope
 
+  timeseries-service:
+    image: openskope/timeseries-service:0.1
+    command: start
+    restart: always
+    user: "0:1258"
+    environment:
+      TIMESERIES_SERVICE_BASE: timeseries-service/api/v1
+      TIMESERIES_SERVICE_DATA: /projects/skope/staging/timeseries 
+    volumes:
+      - /projects/skope:/projects/skope
+
   mongo:
     image: mongo:latest
     restart: always
