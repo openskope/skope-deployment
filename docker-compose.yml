@@ -12,7 +12,7 @@ services:
       - cluster.name=skope
       - bootstrap.memory_lock=true
       - path.data=/projects/skope/staging/esdata
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
     ulimits:
       memlock:
         soft: -1
@@ -32,13 +32,14 @@ services:
       - /projects/skope:/projects/skope
 
   timeseries-service:
-    image: openskope/timeseries-service:0.1
+    image: openskope/timeseries-service:latest
     command: start
     restart: always
     user: "0:1258"
     environment:
       TIMESERIES_SERVICE_BASE: timeseries-service/api/v1
-      TIMESERIES_SERVICE_DATA: /projects/skope/staging/timeseries 
+      TIMESERIES_DATA_PATH_TEMPLATE: /projects/skope/datasets/{datasetID}/{variableName}/cube.tif
+      TIMESERIES_DATA_FILE_EXTENSIONS: .tif .nc4 .nc
     volumes:
       - /projects/skope:/projects/skope
 
