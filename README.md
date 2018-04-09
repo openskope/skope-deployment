@@ -15,8 +15,34 @@ The SKOPE is deployed as a stack of services from a docker-compose.yml file.
 Deployment with docker-compose.yml allows for easy transition from 
 development to staging to production. 
 
-### Deloying for Development
+The basic system changes required to deploy SKOPE locally are minimal
+and shown below. Installation and deployment using existing SKOPE data
+comes down to the following 3 steps:
 
-### Deploying for Staging
+1. prep the local system
+1. copy data from the existing SKOPE system
+1. start the SKOPE services
 
-### Deploying for Production
+For detailed instructions for preparing a new server to run SKOPE and 
+getting existing data, see the instructions in the 
+[SKOPE server config](https://github.com/openskope/server-config).
+
+### Starting SKOPE
+
+This section is from the skope-deployment repository but repeated here
+for convenience. See the skope-deployment instructions for the most recent
+changes.
+
+1. clone the GitHub repository
+1. change to staging branch
+1. use docker-compose to run start services
+
+```
+$ git clone https://github.com/openskope/skope-deployment.git
+...
+$ cd skope-deployment
+$ git checkout staging
+...
+$ sudo docker-compose up -d
+...
+```
