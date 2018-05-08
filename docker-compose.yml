@@ -38,7 +38,8 @@ services:
     user: "0:1258"
     environment:
       TIMESERIES_SERVICE_BASE: timeseries-service/api/v1
-      TIMESERIES_DATA_PATH_TEMPLATE: /projects/skope/datasets/{datasetID}/{variableName}/cube.tif
+      TIMESERIES_DATA_PATH_TEMPLATE: /projects/skope/datasets/{datasetId}/{variableName}/cube.tif
+      TIMESERIES_UNCERTAINTY_PATH_TEMPLATE: /projects/skope/datasets/{datasetId}/{variableName}/uncertainty.tif
       TIMESERIES_DATA_FILE_EXTENSIONS: .tif .nc4 .nc
     volumes:
       - /projects/skope:/projects/skope
