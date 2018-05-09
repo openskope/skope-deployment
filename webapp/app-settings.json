@@ -1,6 +1,6 @@
 {
     "public": {
-        "elasticEndpoint": "http://staging.openskope.org/es"
+        "elasticEndpoint": "https://staging.openskope.org/es"
     },
 
     "server": {

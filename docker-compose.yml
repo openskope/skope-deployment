@@ -70,10 +70,14 @@ services:
   web:
     build: nginx
     restart: always
+    user: "0:1258"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - /var/cache/nginx:/var/lib/nginx/cache
+      - /projects/skope:/projects/skope
     ports:
       - "80:80"
+      - "443:443"
     depends_on:
       - webapp
       - elasticsearch
