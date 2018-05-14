@@ -1,5 +1,6 @@
 {
     "public": {
+        "userGuideUrl": "http://www.openskope.org/skope-users-guide",
         "elasticEndpoint": "http://staging.openskope.org/es"
     },
 
