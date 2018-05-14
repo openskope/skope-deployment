@@ -1,5 +1,6 @@
 {
     "public": {
+        "showBetaSign": true,
         "elasticEndpoint": "http://staging.openskope.org/es"
     },
 
