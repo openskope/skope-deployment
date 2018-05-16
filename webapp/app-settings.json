@@ -8,7 +8,7 @@
         },
         "renderSearchResultItemsWithUnknownType": false,
         "renderInvalidSearchResultItems": false,
-        "elasticEndpoint": "https://staging.openskope.org/es"
+        "elasticEndpoint": "https://app.openskope.org/es"
     },
 
     "server": {
