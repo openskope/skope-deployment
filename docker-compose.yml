@@ -57,7 +57,7 @@ services:
   webapp:
     image: openskope/webapp:latest
     volumes:
-      - ./webapp/app-settings.json:/usr/share/meteor-app/app-settings.json
+      - ./webapp/staging-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
       MONGO_URL: "mongodb://mongo:27017/skope-webapp"
       ROOT_URL: "http://staging.openskope.org/app"

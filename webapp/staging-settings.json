@@ -1,0 +1,17 @@
+{
+    "public": {
+        "contactEmail": "kintigh@asu.edu",
+        "searchpage": {
+            "resultsPerPage": 10,
+            "logSearchKitQueries": false,
+            "logSearchKitQueriesResults": false
+        },
+        "renderSearchResultItemsWithUnknownType": false,
+        "renderInvalidSearchResultItems": false,
+        "elasticEndpoint": "https://staging.openskope.org/es"
+    },
+
+    "server": {
+        "elasticEndpoint": "http://elasticsearch:9200"
+    }
+}
