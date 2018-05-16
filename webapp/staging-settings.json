@@ -1,13 +1,15 @@
 {
     "public": {
-        "contactEmail": "kintigh@asu.edu",
+        "contactEmail": "mailto://kintigh@asu.edu",
+        "userGuideUrl": "https://www.openskope.org/skope-users-guide",
+        "showBetaSign": true,
         "searchpage": {
             "resultsPerPage": 10,
-            "logSearchKitQueries": false,
-            "logSearchKitQueriesResults": false
+            "logSearchKitQueries": true,
+            "logSearchKitQueriesResults": true
         },
-        "renderSearchResultItemsWithUnknownType": false,
-        "renderInvalidSearchResultItems": false,
+        "renderSearchResultItemsWithUnknownType": true,
+        "renderInvalidSearchResultItems": true,
         "elasticEndpoint": "https://staging.openskope.org/es"
     },
 
