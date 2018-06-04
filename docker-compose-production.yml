@@ -56,7 +56,7 @@ services:
       - /projects/skope:/projects/skope
 
   webapp:
-    image: openskope/webapp:v0.1.12
+    image: openskope/webapp:0.1.21
     volumes:
       - ./webapp/app-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
