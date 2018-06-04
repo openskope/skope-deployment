@@ -41,6 +41,7 @@ services:
       TIMESERIES_DATA_PATH_TEMPLATE: /projects/skope/datasets/{datasetId}/{variableName}/cube.tif
       TIMESERIES_UNCERTAINTY_PATH_TEMPLATE: /projects/skope/datasets/{datasetId}/{variableName}/uncertainty.tif
       TIMESERIES_DATA_FILE_EXTENSIONS: .tif .nc4 .nc
+      TIMESERIES_MAX_PROCESSING_TIME: 15000
     volumes:
       - /projects/skope:/projects/skope
 
