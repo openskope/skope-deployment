@@ -3,6 +3,9 @@
         "contactEmail": "kintigh@asu.edu",
         "userGuideUrl": "https://www.openskope.org/skope-users-guide",
         "showBetaSign": true,
+        "sentry": {
+            "dsn": "https://30f9cbdacfcd418a9470d8a38f6fe0b2@sentry.io/1208020"
+        },
         "searchpage": {
             "resultsPerPage": 10,
             "logSearchKitQueries": false,
@@ -12,7 +15,9 @@
         "renderInvalidSearchResultItems": false,
         "elasticEndpoint": "https://app.openskope.org/es"
     },
-
+    "sentry": {
+        "dsn": "https://30f9cbdacfcd418a9470d8a38f6fe0b2@sentry.io/1208020"
+    },
     "server": {
         "elasticEndpoint": "http://elasticsearch:9200"
     }
