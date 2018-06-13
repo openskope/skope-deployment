@@ -1,5 +1,6 @@
 {
     "public": {
+        "gaTrackingId": "UA-109730826-2",
         "contactEmail": "kintigh@asu.edu",
         "userGuideUrl": "https://www.openskope.org/skope-users-guide",
         "showBetaSign": true,
