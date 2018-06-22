@@ -32,7 +32,7 @@ services:
       - /projects/skope:/projects/skope
 
   timeseries-service:
-    image: openskope/timeseries-service:v0.2.1
+    image: openskope/timeseries-service:v0.2.2
     command: start
     restart: always
     user: "0:1258"
@@ -56,7 +56,7 @@ services:
       - /projects/skope:/projects/skope
 
   webapp:
-    image: openskope/webapp:0.1.21
+    image: openskope/webapp:0.1.26
     volumes:
       - ./webapp/app-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
