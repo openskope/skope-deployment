@@ -61,7 +61,7 @@ services:
       - ./webapp/staging-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
       MONGO_URL: "mongodb://mongo:27017/skope-webapp"
-      ROOT_URL: "http://staging.openskope.org/app"
+      ROOT_URL: "http://129.114.16.124/app"
     ports:
       - "3000:3000"
     depends_on:

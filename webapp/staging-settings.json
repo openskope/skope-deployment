@@ -11,7 +11,7 @@
         },
         "renderSearchResultItemsWithUnknownType": true,
         "renderInvalidSearchResultItems": true,
-        "elasticEndpoint": "https://staging.openskope.org/es"
+        "elasticEndpoint": "http://129.114.16.124/es"
     },
 
     "server": {
