@@ -46,12 +46,12 @@ http {
 
     index   index.html index.htm;
 
-    server {
-        listen 80;
-        listen [::]:80;   
-        server_name app.openskope.org staging.openskope.org tacc-staging.openskope.org;
-        return 301 https://$host$request_uri;
-    }
+    #server {
+    #    listen 80;
+    #    listen [::]:80;   
+    #    server_name app.openskope.org staging.openskope.org tacc-staging.openskope.org;
+    #    return 301 https://$host$request_uri;
+    #}
 
     server {
         listen 443 ssl;
@@ -155,17 +155,17 @@ http {
 
     server {
 
-        #listen 80;
-        #listen [::]:80;
+        listen 80;
+        listen [::]:80;
 
-        listen 443 ssl;
-        listen [::]:443 ssl;
-        server_name tacc-staging.openskope.org;
+        #listen 443 ssl;
+        #listen [::]:443 ssl;
+        #server_name tacc-staging.openskope.org;
 
-        ssl_session_timeout         5m;
-        ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
-        ssl_ciphers                 HIGH:!aNULL:!MD5;
-        ssl_prefer_server_ciphers   on;
+        #ssl_session_timeout         5m;
+        #ssl_protocols               TLSv1 TLSv1.1 TLSv1.2;
+        #ssl_ciphers                 HIGH:!aNULL:!MD5;
+        #ssl_prefer_server_ciphers   on;
 
         location /app {
             proxy_http_version 1.1;
