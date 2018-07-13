@@ -11,7 +11,7 @@
         },
         "renderSearchResultItemsWithUnknownType": true,
         "renderInvalidSearchResultItems": true,
-        "elasticEndpoint": "http://129.114.16.124/es"
+        "elasticEndpoint": "https://tacc-staging.openskope.org/es"
     },
 
     "server": {
