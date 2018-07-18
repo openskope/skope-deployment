@@ -11,7 +11,21 @@
         },
         "renderSearchResultItemsWithUnknownType": true,
         "renderInvalidSearchResultItems": true,
-        "elasticEndpoint": "https://staging.openskope.org/es"
+        "elasticEndpoint": "https://staging.openskope.org/es",
+        "baseMaps": [
+            {
+                "name": "arcgis",
+                "title": "ArcGIS World Topography Map",
+                "type": "xyz",
+                "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
+            },
+            {
+                "name": "ahocevar",
+                "title": "ne_10m_admin_0_countries",
+                "type": "wms",
+                "url": "https://ahocevar.com/geoserver/ne/wms?layers=ne:ne_10m_admin_0_countries&tiled=true"
+            }
+        ]
     },
 
     "server": {
