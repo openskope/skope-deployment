@@ -19,6 +19,8 @@ services:
         hard: -1
     volumes:
       - /projects/skope:/projects/skope
+    ports:
+      - "9200:9200"
   
   # geoserver to render tiles
   geoserver:
