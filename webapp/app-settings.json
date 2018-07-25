@@ -28,7 +28,7 @@
         ],
         "renderSearchResultItemsWithUnknownType": false,
         "renderInvalidSearchResultItems": false,
-        "elasticEndpoint": "https://app.openskope.org/es"
+        "elasticEndpoint": "https://tacc-app.openskope.org/es"
     },
     "sentry": {
         "dsn": "https://30f9cbdacfcd418a9470d8a38f6fe0b2@sentry.io/1208020"

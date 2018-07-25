@@ -19,7 +19,9 @@ services:
         hard: -1
     volumes:
       - /projects/skope:/projects/skope
-  
+    ports:
+      - "9200:9200"
+
   # geoserver to render tiles
   geoserver:
     build: geoserver
@@ -32,7 +34,7 @@ services:
       - /projects/skope:/projects/skope
 
   timeseries-service:
-    image: openskope/timeseries-service:v0.2.2
+    image: openskope/timeseries-service:v0.2.4
     command: start
     restart: always
     user: "0:1258"
@@ -56,7 +58,7 @@ services:
       - /projects/skope:/projects/skope
 
   webapp:
-    image: openskope/webapp:0.1.26
+    image: openskope/webapp:0.1.31
     volumes:
       - ./webapp/app-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
