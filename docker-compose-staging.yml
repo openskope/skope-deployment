@@ -11,7 +11,7 @@ services:
     environment:
       - cluster.name=skope
       - bootstrap.memory_lock=true
-      - path.data=/projects/skope/staging/esdata
+      - path.data=/state/esdata
       - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
     ulimits:
       memlock:
@@ -19,6 +19,7 @@ services:
         hard: -1
     volumes:
       - /projects/skope:/projects/skope
+      - ./state:/state
     ports:
       - "9200:9200"
   
@@ -29,9 +30,10 @@ services:
     user: "1000:1258"
     environment:
       JAVA_OPTS: "-Xmx1536M -XX:MaxPermSize=756M -Duser.timezone=GMT -Dorg.geotools.shapefile.datetime=true"
-      GEOSERVER_DATA_DIR: "/projects/skope/staging/geoserver"
+      GEOSERVER_DATA_DIR: "/state/geoserver"
     volumes:
       - /projects/skope:/projects/skope
+      - ./state:/state
 
   timeseries-service:
     image: openskope/timeseries-service:latest
@@ -51,11 +53,12 @@ services:
     image: mongo:latest
     restart: always
     user: "1000:1258"
-    command: "mongod --dbpath /projects/skope/staging/mongo"
+    command: "mongod --dbpath /state/mongo"
     ports:
       - "27017:27017"
     volumes:
       - /projects/skope:/projects/skope
+      - ./state:/state
 
   webapp:
     image: openskope/webapp:latest
