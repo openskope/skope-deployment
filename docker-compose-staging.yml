@@ -62,6 +62,7 @@ services:
 
   webapp:
     image: openskope/webapp:latest
+    restart: always
     volumes:
       - ./webapp/staging-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
@@ -72,6 +73,7 @@ services:
     depends_on:
       - elasticsearch
       - mongo
+      - web
   
   web:
     build: nginx
@@ -84,10 +86,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    depends_on:
-      - webapp
-      - elasticsearch
-      - geoserver
 
 networks:
   default:
