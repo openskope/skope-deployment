@@ -49,15 +49,15 @@ services:
     volumes:
       - ./datasets:/datasets
 
-  mongo:
-    image: mongo:latest
-    restart: always
-    user: "1000:1258"
-    command: "mongod --dbpath /state/mongo"
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./state:/state
+#  mongo:
+#    image: mongo:latest
+#    restart: always
+#    user: "1000:1258"
+#    command: "mongod --dbpath /state/mongo"
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - ./state:/state
 
   webapp:
     image: openskope/webapp:latest
@@ -65,13 +65,13 @@ services:
     volumes:
       - ./webapp/staging-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
-      MONGO_URL: "mongodb://mongo:27017/skope-webapp"
+      MONGO_URL: "mongodb://nowhere"
       ROOT_URL: "http://tacc-staging.openskope.org/app"
     ports:
       - "3000:3000"
     depends_on:
       - elasticsearch
-      - mongo
+#      - mongo
       - web
   
   web:
