@@ -32,6 +32,7 @@ services:
     volumes:
       - ./state:/mnt/state
       - ./datasets:/mnt/datasets
+      - /projects/skope/:/projects/skope/
 
   timeseries-service:
     image: openskope/timeseries-service:v0.2.4
