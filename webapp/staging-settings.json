@@ -11,7 +11,7 @@
         },
         "renderSearchResultItemsWithUnknownType": true,
         "renderInvalidSearchResultItems": true,
-        "elasticEndpoint": "https://tacc-staging.openskope.org/es",
+        "elasticEndpoint": "/es",
         "baseMaps": [
             {
                 "name": "arcgis",
