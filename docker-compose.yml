@@ -53,7 +53,7 @@ services:
     image: openskope/webapp:0.1.31
     restart: always
     volumes:
-      - ./webapp/staging-settings.json:/usr/share/meteor-app/app-settings.json
+      - ./webapp/app-settings.json:/usr/share/meteor-app/app-settings.json
     environment:
       MONGO_URL: "mongodb://nowhere"
       ROOT_URL: "https://${SKOPE_APP_HOST:-localhost}/app"

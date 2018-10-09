@@ -18,17 +18,11 @@
                 "title": "ArcGIS World Topography Map",
                 "type": "xyz",
                 "url": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
-            },
-            {
-                "name": "ahocevar",
-                "title": "ne_10m_admin_0_countries",
-                "type": "wms",
-                "url": "https://ahocevar.com/geoserver/ne/wms?layers=ne:ne_10m_admin_0_countries&tiled=true"
             }
         ],
         "renderSearchResultItemsWithUnknownType": false,
         "renderInvalidSearchResultItems": false,
-        "elasticEndpoint": "https://tacc-app.openskope.org/es"
+        "elasticEndpoint": "/es"
     },
     "sentry": {
         "dsn": "https://30f9cbdacfcd418a9470d8a38f6fe0b2@sentry.io/1208020"
